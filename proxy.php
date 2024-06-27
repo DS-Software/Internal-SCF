@@ -9,7 +9,23 @@
     echo("REQ SENT TO " . $correct_url . "<br>");
     echo("DATA " . $data . "<br>");
 
-    $curl = curl_init($correct_url);
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/json\r\n",
+            'method' => 'GET',
+            'content' => $data,
+        ],
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    if ($result === false) {
+        echo("ERROR");
+    }
+
+    var_dump($result);
+
+    /*$curl = curl_init($correct_url);
     curl_setopt($curl, CURLOPT_HEADER, false);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_HTTPHEADER,
@@ -23,5 +39,5 @@
 
     http_response_code($status);
 
-    echo($json_response);
+    echo($json_response);*/
 ?>
