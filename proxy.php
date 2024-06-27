@@ -7,7 +7,7 @@
     $data = file_get_contents('php://input');
 
     echo("REQ SENT TO " . $correct_url . "<br>");
-    echo("DATA " . $correct_url . "<br>");
+    echo("DATA " . $data . "<br>");
 
     $curl = curl_init($correct_url);
     curl_setopt($curl, CURLOPT_HEADER, false);
