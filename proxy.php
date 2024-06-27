@@ -6,6 +6,9 @@
     $correct_url = "$host:$port/$path";
     $data = file_get_contents('php://input');
 
+    echo("REQ SENT TO " + $correct_url + "<br>");
+    echo("DATA " + $correct_url + "<br>");
+
     $curl = curl_init($correct_url);
     curl_setopt($curl, CURLOPT_HEADER, false);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
