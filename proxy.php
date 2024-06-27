@@ -3,7 +3,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    
+
     $host = "http://95.217.33.122";
     $port = $_GET['port'];
     $path = $_GET['path'];
@@ -23,7 +23,7 @@
     ];
 
     $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    $result = file_get_contents($correct_url, false, $context);
     if ($result === false) {
         echo("ERROR");
     }
