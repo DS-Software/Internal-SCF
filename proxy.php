@@ -14,7 +14,7 @@
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_HTTPHEADER,
             array("Content-type: application/json"));
-    curl_setopt($curl, CURLOPT_POST, true);
+    //curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
     $json_response = curl_exec($curl);
